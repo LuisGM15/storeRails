@@ -1,0 +1,42 @@
+<div class="container">
+
+<h1 class="display-5">Productos disponibles</h1>
+<br>
+<div class="d-flex flex-row-reverse bd-highlight">
+    <a href="<%= products_new_path %>" class="btn btn-success">Agregar nuevo</a>
+</div>
+<br><br>
+<table class="table table-striped"> 
+    <tr> 
+        <thead class="thead-dark">
+            <th>Avatar</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </thead>
+    </tr>
+    <% @products.each do |product| %> 
+    <tr>
+        <td><%= image_tag product.avatar, :size => "220x180", alt: product.name, class: "rounded-full width"%></td>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td> 
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <%= link_to "Editar", edit_product_path(product), class:"btn btn-primary" %>  
+            </div>     
+        </td>
+        <td> 
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <%= link_to "Eliminar", product, method: :delete, data: { confirm: "¿Deseas eliminar este artículo?"}, class:"btn btn-danger" %>   
+            </div>  
+                
+        </td>
+    </tr>
+    <% end %>
+</table>
+
+  
+</div>
+
+

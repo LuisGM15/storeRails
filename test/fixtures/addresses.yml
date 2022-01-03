@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  street: MyText
+  colony: MyText
+  cp: 1
+  city: MyString
+  state: MyString
+
+two:
+  number: 1
+  street: MyText
+  colony: MyText
+  cp: 1
+  city: MyString
+  state: MyString
